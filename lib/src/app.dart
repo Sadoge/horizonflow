@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:horizonflow/src/core/constants/colors.dart';
+import 'package:horizonflow/src/core/constants/text_styles.dart';
+import 'package:horizonflow/src/presentation/splash/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -14,7 +16,16 @@ class App extends StatelessWidget {
           primary: AppColors.primary,
           secondary: AppColors.accent,
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            fixedSize: const Size.fromHeight(45),
+            backgroundColor: AppColors.primary,
+            foregroundColor: Colors.white,
+            textStyle: mediumLight,
+          ),
+        ),
       ),
+      home: const SplashScreen(),
     );
   }
 }

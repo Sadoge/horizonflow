@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:horizonflow/src/core/constants/text_styles.dart';
-import 'package:horizonflow/src/providers/auth/auth_state_provider.dart';
+import 'package:horizonflow/src/features/auth/providers/auth_state_provider.dart';
 
 class DashboardScreen extends HookConsumerWidget {
   const DashboardScreen({super.key});
@@ -24,7 +24,7 @@ class DashboardScreen extends HookConsumerWidget {
           )
         ],
       ),
-      body: Center(child: Text('Welcome user with email: ${user?.email}')),
+      body: Center(child: Text('Welcome ${user?.userMetadata?['fullName']}!')),
     );
   }
 }

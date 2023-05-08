@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:horizonflow/src/presentation/auth/login_screen.dart';
-import 'package:horizonflow/src/presentation/dashboard_screen.dart';
-import 'package:horizonflow/src/providers/auth/auth_state_provider.dart';
+import 'package:horizonflow/src/features/auth/screens/login_screen.dart';
+import 'package:horizonflow/src/features/dashboard_screen.dart';
+import 'package:horizonflow/src/features/auth/providers/auth_state_provider.dart';
 
 class SplashScreen extends HookConsumerWidget {
   const SplashScreen({super.key});

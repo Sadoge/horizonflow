@@ -16,10 +16,32 @@ class AuthState extends StateNotifier<User?> {
     state = supabase.auth.currentUser;
   }
 
-  Future<void> signIn(String email, String password) async {
+  Future<void> signIn({required String email, required String password}) async {
     try {
       final response = await supabase.auth
           .signInWithPassword(email: email, password: password);
+
+      if (response.user != null) {
+        state = response.user;
+      } else {
+        throw Exception('User is null');
+      }
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<void> createAccount({
+    required String email,
+    required String password,
+    required String fullName,
+  }) async {
+    try {
+      final response = await supabase.auth.signUp(
+        email: email,
+        password: password,
+        data: {'fullName': fullName},
+      );
 
       if (response.user != null) {
         state = response.user;

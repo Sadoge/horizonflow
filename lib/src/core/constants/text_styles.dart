@@ -4,7 +4,7 @@ import 'package:horizonflow/src/core/constants/colors.dart';
 const TextStyle header3 = TextStyle(
   fontFamily: 'Rubik',
   fontWeight: FontWeight.normal,
-  color: AppColors.header,
+  color: AppColors.textDark,
   fontSize: 20,
 );
 
